@@ -1,0 +1,44 @@
+{
+  "name": "react-native-mlkit-translate-text",
+  "title": "React Native Mlkit Translate Text",
+  "version": "1.0.0",
+  "description": "language identify and translate module based on MLKits",
+  "main": "index.ts",
+  "types": "./types/*",
+  "files": [
+    "README.md",
+    "android",
+    "index.js",
+    "ios",
+    "react-native-mlkit-translate-text.podspec"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaaliuzhipeng/react-native-mlkit-translate-text.git",
+    "baseUrl": "https://github.com/yaaliuzhipeng/react-native-mlkit-translate-text"
+  },
+  "keywords": [
+    "react-native",
+    "MLKit",
+    "translate-text"
+  ],
+  "author": {
+    "name": "yaaliuzhipeng",
+    "email": "yaaliuzhipeng@outlook.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": ">=16.8.1",
+    "react-native": ">=0.66.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-native": "^0.66.0",
+    "typescript": "^4.3.0"
+  }
+}
