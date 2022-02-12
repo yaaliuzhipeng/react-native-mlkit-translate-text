@@ -168,7 +168,7 @@ const isModelDownloaded = (language:LANG_TAGS_TYPE) => {
 const deleteDownloadedModel = (language: LANG_TAGS_TYPE) => {
     return new Promise((resolver, rejecter) => {
         NativeMLKitTranslateText.deleteDownloadedModel(
-            LANG_TAGS[language],
+            language,
             (v) => { resolver(v); },
             (e) => { rejecter(e); }
         );
