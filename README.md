@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/yaaliuzhipeng/react-native-mlkit-translate-text/raw/logo.png" alt="MLKitTranslator" width="539" />
+  <img src="https://github.com/yaaliuzhipeng/react-native-mlkit-translate-text/blob/main/raw/logo.png" alt="MLKitTranslator" width="539" />
 </p>
 
 <h4 align="center">
