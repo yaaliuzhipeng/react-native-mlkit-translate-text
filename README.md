@@ -35,6 +35,15 @@ Key capabilities
 - Dynamic model management Keep on-device storage requirements low by dynamically downloading and managing language packs.
 - Runs on the device Translations are performed quickly, and don't require you to send users' text to a remote server.
 
+## Installation
+
+> yarn add react-native-mlkit-entity-extraction
+
+or
+
+> npm i --save react-native-mlkit-entity-extraction
+
+
 ## Usage
 
 **Quick example:** identify language type
