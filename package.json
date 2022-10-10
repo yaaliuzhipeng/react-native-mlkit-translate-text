@@ -1,15 +1,17 @@
 {
   "name": "react-native-mlkit-translate-text",
   "title": "React Native Mlkit Translate Text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "language identify and translate module based on MLKits",
   "main": "index.ts",
   "types": "./types/*",
   "files": [
     "README.md",
     "android",
-    "index.js",
     "ios",
+    "types",
+    "index.ts",
+    "MLKitTranslator.ts",
     "react-native-mlkit-translate-text.podspec"
   ],
   "scripts": {
