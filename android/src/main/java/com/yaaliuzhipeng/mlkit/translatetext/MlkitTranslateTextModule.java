@@ -76,11 +76,11 @@ public class MlkitTranslateTextModule extends ReactContextBaseJavaModule {
         String sourceL = TranslateLanguage.fromLanguageTag(sourceLanguageTag);
         String targetL = TranslateLanguage.fromLanguageTag(targetLanguageTag);
         if (sourceL == null) {
-            failCallback.invoke("不支持翻译该语种");
+            failCallback.invoke("unsupport source language");
             return;
         }
         if (targetL == null) {
-            failCallback.invoke("不支持翻译成目标语言");
+            failCallback.invoke("unsupport target language");
             return;
         }
         TranslatorOptions options = new TranslatorOptions.Builder()

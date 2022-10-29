@@ -63,65 +63,65 @@ export const LANG_TAGS = {
     VIETNAMESE: "vi",
     WELSH: "cy",
 }
-export type LANG_TAGS_TYPE = 'AFRIKAANS'|
-'ALBANIAN'|
-'ARABIC'|
-'BELARUSIAN'|
-'BULGARIAN'|
-'BENGALI'|
-'CATALAN'|
-'CHINESE'|
-'CROATIAN'|
-'CZECH'|
-'DANISH'|
-'DUTCH'|
-'ENGLISH'|
-'ESPERANTO'|
-'ESTONIAN'|
-'FINNISH'|
-'FRENCH'|
-'GALICIAN'|
-'GEORGIAN'|
-'GERMAN'|
-'GREEK'|
-'GUJARATI'|
-'HAITIAN_CREOLE'|
-'HEBREW'|
-'HINDI'|
-'HUNGARIAN'|
-'ICELANDIC'|
-'INDONESIAN'|
-'IRISH'|
-'ITALIAN'|
-'JAPANESE'|
-'KANNADA'|
-'KOREAN'|
-'LITHUANIAN'|
-'LATVIAN'|
-'MACEDONIAN'|
-'MARATHI'|
-'MALAY'|
-'MALTESE'|
-'NORWEGIAN'|
-'PERSIAN'|
-'POLISH'|
-'PORTUGUESE'|
-'ROMANIAN'|
-'RUSSIAN'|
-'SLOVAK'|
-'SLOVENIAN'|
-'SPANISH'|
-'SWEDISH'|
-'SWAHILI'|
-'TAGALOG'|
-'TAMIL'|
-'TELUGU'|
-'THAI'|
-'TURKISH'|
-'UKRAINIAN'|
-'URDU'|
-'VIETNAMESE'|
-'WELSH';
+export type LANG_TAGS_TYPE = 'AFRIKAANS' |
+    'ALBANIAN' |
+    'ARABIC' |
+    'BELARUSIAN' |
+    'BULGARIAN' |
+    'BENGALI' |
+    'CATALAN' |
+    'CHINESE' |
+    'CROATIAN' |
+    'CZECH' |
+    'DANISH' |
+    'DUTCH' |
+    'ENGLISH' |
+    'ESPERANTO' |
+    'ESTONIAN' |
+    'FINNISH' |
+    'FRENCH' |
+    'GALICIAN' |
+    'GEORGIAN' |
+    'GERMAN' |
+    'GREEK' |
+    'GUJARATI' |
+    'HAITIAN_CREOLE' |
+    'HEBREW' |
+    'HINDI' |
+    'HUNGARIAN' |
+    'ICELANDIC' |
+    'INDONESIAN' |
+    'IRISH' |
+    'ITALIAN' |
+    'JAPANESE' |
+    'KANNADA' |
+    'KOREAN' |
+    'LITHUANIAN' |
+    'LATVIAN' |
+    'MACEDONIAN' |
+    'MARATHI' |
+    'MALAY' |
+    'MALTESE' |
+    'NORWEGIAN' |
+    'PERSIAN' |
+    'POLISH' |
+    'PORTUGUESE' |
+    'ROMANIAN' |
+    'RUSSIAN' |
+    'SLOVAK' |
+    'SLOVENIAN' |
+    'SPANISH' |
+    'SWEDISH' |
+    'SWAHILI' |
+    'TAGALOG' |
+    'TAMIL' |
+    'TELUGU' |
+    'THAI' |
+    'TURKISH' |
+    'UKRAINIAN' |
+    'URDU' |
+    'VIETNAMESE' |
+    'WELSH';
 
 const identifyLanguage = (text: string) => {
     return new Promise((resolver, rejecter) => {
@@ -139,25 +139,32 @@ const identifyPossibleLanguages = (text: string) => {
             (e) => { rejecter(e); });
     });
 }
-const translateText = (text: string, sourceLanguageTag:LANG_TAGS_TYPE,targetLanguageTag: LANG_TAGS_TYPE) => {
+const translateText = (text: string, sourceLanguage: LANG_TAGS_TYPE, targetLanguage: LANG_TAGS_TYPE) => {
     return new Promise((resolver, rejecter) => {
+        if (LANG_TAGS[sourceLanguage] === undefined || LANG_TAGS[targetLanguage] === undefined) {
+            rejecter('unsupport language');
+            return;
+        }
         NativeMLKitTranslateText.translateText(
             text,
-            sourceLanguageTag,
-            targetLanguageTag,
+            LANG_TAGS[sourceLanguage],
+            LANG_TAGS[targetLanguage],
             (v) => { resolver(v); },
             (e) => { rejecter(e); });
     });
 }
-const isModelDownloaded = (language:LANG_TAGS_TYPE) => {
-
+const isModelDownloaded = (language: LANG_TAGS_TYPE) => {
     return new Promise((resolver, rejecter) => {
+        if (LANG_TAGS[language] === undefined) {
+            rejecter('unsupport language');
+            return;
+        }
         NativeMLKitTranslateText.isModelDownloaded(
-            language,
-            (v) => { 
-                if(Platform.OS === 'ios') {
-                    resolver(v === 1 ? true : false); 
-                }else{
+            LANG_TAGS[language],
+            (v) => {
+                if (Platform.OS === 'ios') {
+                    resolver(v === 1 ? true : false);
+                } else {
                     resolver(v);
                 }
             },
@@ -167,8 +174,12 @@ const isModelDownloaded = (language:LANG_TAGS_TYPE) => {
 }
 const deleteDownloadedModel = (language: LANG_TAGS_TYPE) => {
     return new Promise((resolver, rejecter) => {
+        if (LANG_TAGS[language] === undefined) {
+            rejecter('unsupport language');
+            return;
+        }
         NativeMLKitTranslateText.deleteDownloadedModel(
-            language,
+            LANG_TAGS[language],
             (v) => { resolver(v); },
             (e) => { rejecter(e); }
         );
@@ -176,8 +187,12 @@ const deleteDownloadedModel = (language: LANG_TAGS_TYPE) => {
 }
 const downloadModel = (language: LANG_TAGS_TYPE) => {
     return new Promise((resolver, rejecter) => {
+        if (LANG_TAGS[language] === undefined) {
+            rejecter('unsupport language');
+            return;
+        }
         NativeMLKitTranslateText.downloadModel(
-            language,
+            LANG_TAGS[language],
             (v) => { resolver(v); },
             (e) => { rejecter(e); }
         );
