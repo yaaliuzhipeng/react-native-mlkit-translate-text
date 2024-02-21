@@ -1,5 +1,7 @@
-Arhived ! Use New Library (support new arch) instead 
-<a href="https://github.com/yaaliuzhipeng/react-native-mlkit-translate-text"></a>
+** 📢 **
+** Arhived ! Use New Library (support new arch) instead **
+([fast-mlkit-translate-text](https://github.com/yaaliuzhipeng/fast-mlkit-translate-text))
+
 
 <p align="center">
   <img src="https://github.com/yaaliuzhipeng/react-native-mlkit-translate-text/blob/main/raw/logo.png" alt="MLKitTranslator" width="539" />
